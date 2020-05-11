@@ -10,6 +10,7 @@
 
 ## Differences from `xrange`:
 - only numeric implementation with two or three numeric arguments: `xrange(start, stop, step?)`;
+- no proper support of decimal numbers, only integers;
 - no custom errors, such as `"argument is required"` or `"argument must infinite"`;
 - no intelligent boundary swapping, &mdash; e.g., `xrange(10, 1)` will not iterate;
 - only Node.JS is supported (for now at least);
