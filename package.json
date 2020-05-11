@@ -51,7 +51,8 @@
     "clean": "rimraf dist/*",
     "prebuild": "npm run clean",
     "build": "tsc --project ./tsconfig.prod.json",
-    "dev": "tsc --project ./tsconfig.dev.json"
+    "dev": "tsc --project ./tsconfig.dev.json",
+    "prepublishOnly": "npm run build && npm test && git push --follow-tags"
   },
   "devDependencies": {
     "@types/jest": "25.2.1",
