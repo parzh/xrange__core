@@ -17,8 +17,29 @@
   ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "jest": {
+    "verbose": true,
+    "preset": "ts-jest",
+    "resetMocks": true,
+    "rootDir": ".",
+    "roots": [
+      "<rootDir>/test"
+    ],
+    "testMatch": [
+      "<rootDir>/test/**/*.spec.ts"
+    ],
+    "collectCoverageFrom": [
+      "<rootDir>/src/**/*.ts"
+    ],
+    "coverageDirectory": "<rootDir>/coverage",
+    "cacheDirectory": "<rootDir>/test/.cache",
+    "testEnvironment": "node",
+    "errorOnDeprecated": true
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --no-cache",
+    "test:cov": "npm run test -- --coverage",
+    "test:ci": "npm run test -- --no-colors",
     "start": "node --require ts-node/register src",
     "clean": "rimraf dist/*",
     "clean:spare": "rimraf dist/**/*.impl.d.ts dist/typings/*.js",
@@ -28,8 +49,11 @@
     "dev": "tsc --project ./tsconfig.dev.json"
   },
   "devDependencies": {
+    "@types/jest": "25.2.1",
     "@types/node": "13.9.0",
+    "jest": "25.5.4",
     "rimraf": "3.0.2",
+    "ts-jest": "25.5.1",
     "ts-node": "8.6.2",
     "typescript": "3.8.3"
   }
