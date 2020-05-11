@@ -28,9 +28,18 @@
     "testMatch": [
       "<rootDir>/test/**/*.spec.ts"
     ],
+    "collectCoverage": true,
     "collectCoverageFrom": [
       "<rootDir>/src/**/*.ts"
     ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    },
     "coverageDirectory": "<rootDir>/coverage",
     "cacheDirectory": "<rootDir>/test/.cache",
     "testEnvironment": "node",
@@ -38,7 +47,6 @@
   },
   "scripts": {
     "test": "jest --no-cache",
-    "test:cov": "npm run test -- --coverage",
     "test:ci": "npm run test -- --no-colors",
     "start": "node --require ts-node/register src",
     "clean": "rimraf dist/*",
