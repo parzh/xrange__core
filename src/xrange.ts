@@ -1,4 +1,4 @@
-export type XRange = Generator<number, undefined>;
+export type XRange = Generator<number, number>;
 
 export default function* xrange(start: number, stop: number, step = 1): XRange {
 	const _stop = +stop;
@@ -12,5 +12,5 @@ export default function* xrange(start: number, stop: number, step = 1): XRange {
 	)
 		yield curr;
 
-	return undefined;
+	return NaN;
 }
