@@ -1,4 +1,4 @@
-import type XRange from "./typings/xrange";
+export type XRange = Generator<number, undefined>;
 
 export default function* xrange(start: number, stop: number, step = 1): XRange {
 	const _stop = +stop;
