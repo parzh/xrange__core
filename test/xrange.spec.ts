@@ -63,7 +63,7 @@ it("should not iterate when `start` and `stop` are equal", () => {
 	expect(list).toHaveLength(0);
 });
 
-it("[ts] should be type-castable", () => {
+it("[ts] should be assignable to `number`", () => {
 	const range = xrange(0, 5);
 
 	// expect value to be a `number`
